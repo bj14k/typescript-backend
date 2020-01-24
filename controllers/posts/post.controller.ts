@@ -19,15 +19,15 @@ export class PostsController implements IController {
     this.intializeRoutes();
   }
 
-  public get = (req: Request, res: Response): void => {
+  public get(req: Request, res: Response): void {
     res.send(this.posts);
-  };
+  }
 
-  public post = (req: Request, res: Response): void => {
+  public post(req: Request, res: Response): void {
     const newPost: any = req.body;
     this.posts.push(newPost);
     res.send(newPost);
-  };
+  }
 
   public intializeRoutes() {
     this.router.get(this.path, this.get);
